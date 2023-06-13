@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: asyrafduyshart/task-worker-rust:latest
+    ports:
+      - "8050:8050"
+    environment:
+      - APP_PORT=8050
+      - LISTEN_IP=0.0.0.0
+      - KAFKA_KEY=RA4GALXJYWTBRKVD
+      - KAFKA_SECRET=q6+pZ6Q2Gnyg8wDaZejhoQ8/qSH7d64OAR7YuzMUJerLfMUCRHKwV0OBFybZNA/8
+      - KAFKA_BROKER=pkc-ldvr1.asia-southeast1.gcp.confluent.cloud:9092
