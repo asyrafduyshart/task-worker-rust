@@ -14,6 +14,7 @@ pub async fn route(req: Request<Body>) -> Result<hyper::Response<Body>, hyper::E
     let client = Client::builder().build::<_, hyper::Body>(https);
 
     match (req.method(), req.uri().path()) {
+        (&Method::GET, "/") => Ok(Response::new(Body::from("Rust Task Worker!"))),
         (&Method::POST, "/task/kafka") => kafka_handle(req, producer).await,
         (&Method::POST, "/task/http") => http_handle(req, client).await,
         _ => Ok(Response::builder()
