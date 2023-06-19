@@ -2,7 +2,7 @@ use std::{collections::HashMap, time::Duration};
 
 use hyper::{
     client::HttpConnector,
-    http::{request, HeaderName, HeaderValue},
+    http::{HeaderName, HeaderValue},
     Body, Client, Request, Response, StatusCode, Uri,
 };
 use hyper_tls::HttpsConnector;
